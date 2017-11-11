@@ -1,6 +1,6 @@
 
 all: 
-	cd src;
+	cd src;\
 	make
 
 lin64:
@@ -8,8 +8,9 @@ lin64:
 	make libjaggame.a
 
 win32: 
-	cd src; make libjaggamewin32.a
+	cd src;\
+	make libjaggamewin32.a
 
 win64:
-	cd src;
+	cd src;\
 	make libjaggamewin64.a
