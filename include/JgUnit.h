@@ -5,25 +5,26 @@
 namespace JagGame {
 class Unit {
 	public:
+	Unit();
+	Unit(SDL_Renderer*);
 	const SDL_Rect *const getRegion();
 	virtual Uint32 getEventFlags();
 	virtual void render();
 	inline void setRenderer(SDL_Renderer*);
 	inline void setRegion(SDL_Rect*);
-	void receiveEvents(std::vector<SDL_Event>&);
+	void receiveEvents(std::vector<SDL_Event>*);
 	virtual void destroy();
-
 	protected:
 	virtual void handleEvent(SDL_Event&);
 	
 	SDL_Renderer *renderer;
 	SDL_Rect *region;
 	int nUnits;
-	Unit *units[];
+	Unit **units;
 	Uint32 eventFlags[];
 	std::vector<SDL_Event> unitEvents[];
 };
 }//namespace JagGame
 
-#define __JAGUNIT__
+#define __JGUNIT__
 #endif
