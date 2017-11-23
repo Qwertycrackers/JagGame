@@ -7,14 +7,13 @@ namespace JagGame {
 class Game: public Unit {
 	public:
 	Game();
-	Game(SDL_Renderer*): Unit(SDL_Renderer*);
+	Game(SDL_Renderer*);
 	//setSoundthing(soundthing)
-	virtual void start();
+	virtual int start();
 	protected:
 	bool quit;
-	SDL_Renderer renderer;
 	std::vector<SDL_Event> *events;
-}
+};
 }
 
 #define __JGGAME__
