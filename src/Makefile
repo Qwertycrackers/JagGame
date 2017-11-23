@@ -6,7 +6,7 @@ win32CC = /opt/mingw32/bin/i686-w64-mingw32-g++
 
 win64CC = /opt/mingw64/bin/x86_64-w64-mingw32-g++
 
-FLAGS = -c
+FLAGS = -c -std=c++11
 
 win32FLAGS = -mwindows
 

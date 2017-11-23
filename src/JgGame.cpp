@@ -17,7 +17,7 @@ int Game::start() {
 		render();
 		SDL_RenderPresent(renderer);
 	}
-	return 1; //consider returning some other values elsewhere for error returning
+	return 1; //consider returning some other values elsewhere for error 
 }
 
 Game::Game(SDL_Renderer* r): Unit(r) {
