@@ -1,4 +1,5 @@
 #include "JgLoadTexture.h"
+//!\file Source for `JagGame::loadTexture` functions.
 /*! Load an `SDL_Texture` from an asset found at a particular path.
 	\param path The string representing the path to the asset.
 	\param r a pointer to the rendering context to use.
