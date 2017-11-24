@@ -4,8 +4,8 @@
 #include <SDL2/SDL_image.h> //initialize SDL_image before using this method
 
 namespace JagGame {
-SDL_Texture *loadTexture(std::string&, SDL_Renderer*);
-SDL_Texture *loadTexture(const char*,SDL_Renderer*);
+SDL_Texture *loadTexture(std::string&, SDL_Renderer*); //!<\brief Load a texture from resource found at a path.
+SDL_Texture *loadTexture(const char*,SDL_Renderer*); //!<\brief C-style string path for `loadTexture`.
 }
 
 #define __JGLOADTEXTURE__

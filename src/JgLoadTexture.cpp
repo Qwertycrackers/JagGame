@@ -1,8 +1,14 @@
 #include "JgLoadTexture.h"
+/*! Load an `SDL_Texture` from an asset found at a particular path.
+	\param path The string representing the path to the asset.
+	\param r a pointer to the rendering context to use.
+	\returns a pointer to the loaded texture. */
 SDL_Texture *JagGame::loadTexture(std::string &path, SDL_Renderer *r) {
 	return JagGame::loadTexture(path.c_str(), r);
 }
-
+/*! \param path a C-style string representing the path to the asset.
+	\param r the rendering context for the texture.
+	\returns the loaded `SDL_Texture`. */
 SDL_Texture *JagGame::loadTexture(const char* path, SDL_Renderer *r) {
 	SDL_Texture *texture; //the texture to be returned
 	SDL_Surface *surface; //the surface which will hold the intermediate data
