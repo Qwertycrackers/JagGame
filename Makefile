@@ -1,5 +1,5 @@
 
-all: 
+all: doxygen
 	cd src;\
 	make
 
@@ -14,3 +14,7 @@ win32:
 win64:
 	cd src;\
 	make libjaggamewin64.a
+
+.PHONY: doxygen
+doxygen:
+	doxygen Doxyfile
