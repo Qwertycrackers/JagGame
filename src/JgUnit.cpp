@@ -15,6 +15,7 @@ inline void Unit::setRegion(SDL_Rect *r) {
 	region = r;
 }
 
+
 void Unit::receiveEvents(std::vector<SDL_Event> &events) {
 	int size = events.size();	
 	for(int i = 0; i < size; i++) {

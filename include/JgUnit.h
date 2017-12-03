@@ -19,7 +19,7 @@ class Unit {
 	SDL_Renderer *renderer;
 	SDL_Rect *region;
 	int nUnits;
-	Unit *units[];
+	Unit **units;
 	Uint32 eventFlags[];
 	std::vector<SDL_Event> unitEvents[];
 };
