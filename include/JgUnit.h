@@ -16,7 +16,7 @@ class Unit {
 	virtual Uint32 getEventFlags(); //!<\brief Get a bitwise OR'd stack of `SDL_Event.type` flags desired by this `Unit`.
 	virtual void render(); //!<\brief Draw this `Unit`'s stuff to the screen.
 	inline void setRenderer(SDL_Renderer*); //!<\brief Set the renderer to to be used by this `Unit`.
-	inline void setRegion(SDL_Rect*); //!<\brief Set the screen region owned by this `Unit`.
+	virtual void setRegion(SDL_Rect*); //!<\brief Set the screen region owned by this `Unit`.
 	void receiveEvents(std::vector<SDL_Event>*); //!<\brief Give this `Unit` a stack of events to handle. Once per frame.
 	virtual ~Unit(); 
 	protected:

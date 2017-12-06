@@ -16,7 +16,7 @@ inline void Unit::setRenderer(SDL_Renderer *r) {
 	renderer = r;
 }
 /*! \param r The region for the `Unit` to draw on. The `Unit` will own this `SDL_Rect` now, so don't delete it from elsewhere. */
-inline void Unit::setRegion(SDL_Rect *r) {
+void Unit::setRegion(SDL_Rect *r) {
 	delete(region);
 	region = r;
 }
