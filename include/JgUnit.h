@@ -26,8 +26,8 @@ class Unit {
 	SDL_Rect *region; //!<\brief The region owned by this `Unit`.
 	int nUnits; //!<\brief The number of sub-`Unit`s in this `Unit`. Children should set this.
 	Unit **units; //!<\brief A C-style array containing pointers to the sub-`Unit`s. Children should create this.
-	Uint32 eventFlags[]; //!<\brief A C-style array with the event flags for each sub-`Unit`.
-	std::vector<SDL_Event> unitEvents[]; //!<\brief a C-style array of `vector`s containing the events to be passed to each sub-`Unit`.
+	Uint32 *eventFlags; //!<\brief A C-style array with the event flags for each sub-`Unit`.
+	std::vector<SDL_Event> *unitEvents; //!<\brief a C-style array of `vector`s containing the events to be passed to each sub-`Unit`.
 };
 }//namespace JagGame
 #define __JGUNIT__

@@ -50,3 +50,4 @@ libjaggamewin64.a: $(patsubst %.cpp,%win64.o,$(wildcard *.cpp))
 
 %win64.o: %.cpp
 	${win64CC} $< ${FLAGS} ${win64FLAGS} ${win64LIBS} ${LIBS} ${INCLUDE} ${win64INCLUDE} ${LIBS_BIN} ${win64LIBS_BIN} -o $@
+
