@@ -11,9 +11,13 @@ Uint32 GridUnit()::getEventFlags() {
 }
 /*! Set the region occupied by this `GridUnit`. 
 	\param r the region to be used. */
-void setRegion(SDL_Rect *r) {
+void GridUnit::setRegion(SDL_Rect *r) {
 	Unit::setRegion(r);
-	int param = 
+	updateTileWidth;
+}
+void updateTileWidth() {
+	tileWidth = ((region->x > region->y) ? region->y : region->x)/numUnits;
+}
 /*! \param *events A pointer to a `std::vector` containing the events to handle. */
 void GridUnit::handleEvent(SDL_Event &e) {
 	if(e.type == SDL_MOUSEMOTION)

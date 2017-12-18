@@ -22,6 +22,7 @@ class GridUnit: public Unit {
 	void handleEvent(SDL_Event&); //!<\brief Handle a single event.
 	inline Cell findMouseCell(SDL_Event&); //!<\brief Find the cell coordinates of a mouse event.
 	inline void handleKeyInput(SDL_Event&) //!<\brief Handle a key event for input.
+	inline void updateTileWidth(); //!<\brief Change tile width in response to various things
 	TileDataEngine *engine; //!<\brief The engine handling game logic for this `Unit`.
 	int tileWidth; //!<\brief Width of a tile at the current moment
 	int numTiles; //!<\brief Number of tiles on a side at the current moment
