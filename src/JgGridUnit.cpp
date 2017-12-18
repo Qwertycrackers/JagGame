@@ -25,7 +25,7 @@ void GridUnit::setTileDataEngine(TileDataEngine *e) {
 	engine = e;
 	origin = engine->getOrigin();
 }
-/*! \param *events A pointer to a `std::vector` containing the events to handle. */
+/*! \param *events The event to handle. */
 void GridUnit::handleEvent(SDL_Event &e) {
 	if(e.type == SDL_MOUSEMOTION)
 		engine->setCurrentCell(findMouseCell(e));
