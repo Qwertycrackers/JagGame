@@ -1,6 +1,7 @@
 #ifndef __JGGAME__
 #include <SDL2/SDL.h>
 #include <vector>
+#include <memory>
 #include "JgUnit.h"
 
 namespace JagGame {
@@ -19,7 +20,7 @@ class Game: public Unit {
 	virtual ~Game(); //!<\brief Destroy this `Unit`s stuff in preparation for `delete`ion.
 	protected:
 	bool quit; //!<\brief The flag for when the `Game` should quit.
-	std::vector<SDL_Event> *events; //!<\brief The `vector` containing the events for this frame. Used by the game loop, but child classes mighwant to mess with it.
+	std::vector<std::shared_ptr<SDL_Event>> *events; //!<\brief The `vector` containing the events for this frame. Used by the game loop, but child classes mighwant to mess with it.
 	
 };
 }

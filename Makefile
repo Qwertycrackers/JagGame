@@ -15,6 +15,9 @@ win64:
 	cd src;\
 	make libjaggamewin64.a
 
-.PHONY: doxygen
+.PHONY: doxygen clean
 doxygen:
 	doxygen Doxyfile
+
+clean:
+	rm src/*.o

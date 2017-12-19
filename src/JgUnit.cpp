@@ -20,19 +20,18 @@ void Unit::setRegion(SDL_Rect *r) {
 	delete(region);
 	region = r;
 }
-/*! This implementation of the method is intended to handle all the stuff which every Unit must to. When extending the class, do child-specific
-	logic and then call this one. */
-void Unit::receiveEvents(std::vector<SDL_Event> *events) {
+/*! This implementation of the method is intended to handle all the stuff which every Unit must do. */
+void Unit::receiveEvents(std::vector<std::shared_ptr<SDL_Event>> *events) {
 	int size = events->size();	
 	for(int i = 0; i < size; i++) {
-		handleEvent((*events)[i]);
+		handleEvent(events->at(i).get());
 		for(int k = 0; k < nUnits; k++) {
 			if(i == 0)
 				unitEvents[k].clear();
-			if(events->at(i).type & eventFlags[k] != 0)
+			if(events->at(i)->type & eventFlags[k])
 				unitEvents[k].push_back(events->at(i));
 			if(i == size-1)
-				units[k]->receiveEvents(&unitEvents[k]);
+				units[k]->receiveEvents(unitEvents + k);
 		}
 	}
 }
