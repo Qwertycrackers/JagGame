@@ -1,5 +1,8 @@
 #ifndef __JGCELL__
 namespace JagGame {
+/*!\brief Struct Cell represents a point in 3d space.
+*
+* Intended for use in `TileDataEngine`s to represent a tile location. Has the `+` and `-` operators for convienience. */
 struct Cell {
 	int x;
 	int y;
