@@ -76,18 +76,17 @@ Cell GridUnit::findMouseCell(SDL_Event *e) {
 void GridUnit::render() {
 	int i = 0; //counter in the x
 	int j = 0; //counter in the y
-	SDL_Texture *sprite; //whatever's on the tile
-	SDL_Texture *floor; //the tile's backround
+	const std::vector<SDL_Texture*> *textures; //pointer to the textures for a particular tile
 	SDL_Rect tile; //rectangle where the current tile will go
 	tile.x = region->x; //set starting x and y to upper corner of region.
 	tile.y = region->y;
 	tile.h = tileWidth; //make area as large as one tile (always square)
-	tile.w = tileWidth;
-	while(tile.x < region->x + region->w) { //until we've looped across the x
-		while(tile.y < region->y + region->h) { //until we've looped across the y
-			engine->getTextures(i,j,sprite,floor); //Set sprite and floor to point at the textures for the cell
-			SDL_RenderCopy(renderer, floor, NULL, &tile); //render the floor
-			SDL_RenderCopy(renderer, sprite, NULL, &tile); //render the sprite
+	tile.w = tileWidth; //POTENTIAL: Function could be faster if it pre-calculated parts of the loop below.
+	while(tile.x + tile.w < region->x + region->w) { //until we've looped across the x
+		while(tile.y + tile.h < region->y + region->h) { //until we've looped across the y
+			textures = engine->getTextures(i,j); //Set sprite and floor to point at the textures for the cell
+			for(SDL_Texture *texture : *textures)
+				SDL_RenderCopy(renderer, texture, NULL, &tile);
 			j++;
 			tile.y += tileWidth;
 		}
