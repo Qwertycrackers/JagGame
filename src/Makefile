@@ -6,7 +6,7 @@ win32CC = /opt/mingw32/bin/i686-w64-mingw32-g++
 
 win64CC = /opt/mingw64/bin/x86_64-w64-mingw32-g++
 
-FLAGS = -c -std=c++11
+FLAGS = -c -std=c++14
 
 win32FLAGS = -mwindows
 
@@ -42,11 +42,11 @@ libjaggamewin32.a: $(patsubst %.cpp,%win32.o,$(wildcard *.cpp))
 libjaggamewin64.a: $(patsubst %.cpp,%win64.o,$(wildcard *.cpp))
 	ar rcs ../win64/$@ $^
 
-%lin64.o: %.cpp
+%lin64.o: %.cpp ../include/%.h
 	${CC} $< ${FLAGS} ${LIBS} ${INCLUDE} ${LIBS_BIN} -o $@
 
-%win32.o: %.cpp
+%win32.o: %.cpp ../include/%.h
 	${win32CC} $< ${FLAGS} ${win32FLAGS} ${win32LIBS} ${LIBS} ${INCLUDE} ${win32INCLUDE} ${LIBS_BIN} ${win32LIBS_BIN} -o $@
 
-%win64.o: %.cpp
+%win64.o: %.cpp ../include/%.h
 	${win64CC} $< ${FLAGS} ${win64FLAGS} ${win64LIBS} ${LIBS} ${INCLUDE} ${win64INCLUDE} ${LIBS_BIN} ${win64LIBS_BIN} -o $@
