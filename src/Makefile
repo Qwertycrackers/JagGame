@@ -6,11 +6,11 @@ win32CC = /opt/mingw32/bin/i686-w64-mingw32-g++
 
 win64CC = /opt/mingw64/bin/x86_64-w64-mingw32-g++
 
-FLAGS = -c -std=c++14
+FLAGS = -c -std=c++11
 
-win32FLAGS = -mwindows
+win32FLAGS = -mwindows -std=c++11
 
-win64FLAGS = -mwindows
+win64FLAGS = -mwindows -std=c++11
 
 LIBS = -lSDL2 -lSDL2_image
 

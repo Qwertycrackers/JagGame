@@ -1,9 +1,11 @@
 #ifndef __JGGRIDUNIT__
+#include <vector>
+#include <memory>
 #include <SDL2/SDL.h>
 #include "JgUnit.h"
 #include "JgTileDataEngine.h"
 #include "JgCell.h"
-#include <vector>
+
 namespace JagGame{
 /*!\brief Class GridUnit renders a grid to its region and renders tile data to the grid in concordance with its TileDataEngine.
 
